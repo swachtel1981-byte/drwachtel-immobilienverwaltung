@@ -3,3 +3,47 @@
 @media(max-width:900px){nav a:not(.nav-cta){display:none}.hero{padding:62px 0 54px}.hero-grid,.about-grid{grid-template-columns:1fr;gap:34px}.hero-card{max-width:680px}.cards{grid-template-columns:1fr}.service-card>p{min-height:0}.benefit-grid{grid-template-columns:1fr 1fr}.profile-facts{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}.proof p{border-right:0;border-bottom:1px solid var(--line)}.region-card,.contact-box{align-items:flex-start;flex-direction:column}}
 @media(max-width:600px){html{scroll-padding-top:78px}.wrap{width:calc(100% - 32px)}.prelaunch{padding:6px 12px;font-size:10.5px;line-height:1.35}.nav{min-height:64px;gap:10px}.brand{gap:9px}.brand-mark{width:38px;height:38px;font-size:14px}.brand strong{font-size:17px}.brand small{font-size:10.5px;margin-top:2px}.nav-cta{padding:8px 11px;font-size:12px}nav{gap:0}.hero{padding:42px 0 38px;background:radial-gradient(circle at 100% 0,rgba(199,169,107,.18),transparent 32%),linear-gradient(180deg,#f8fafb,#fff)}.hero-grid{gap:28px}.eyebrow{font-size:10.5px;letter-spacing:.1em;margin-bottom:9px}h1{font-size:clamp(39px,11.7vw,50px);line-height:1.01;letter-spacing:-.038em;margin-bottom:18px}.lead{font-size:17px;line-height:1.55;margin-bottom:23px}.hero-actions{display:grid;grid-template-columns:1fr;gap:9px}.button{width:100%;min-height:50px;padding:12px 16px}.trust{margin-top:28px;padding-top:18px;grid-template-columns:1fr;gap:0}.trust div{padding:10px 0;border-bottom:1px solid #edf1f3}.trust div:last-child{border-bottom:0}.trust strong{font-size:13.5px}.trust span{font-size:11.5px}.hero-card{padding:23px 21px;border-radius:16px;box-shadow:0 12px 34px rgba(18,56,76,.08)}.hero-card h2{font-size:27px}.checklist li{font-size:13.5px;padding-top:8px;padding-bottom:8px}.small{font-size:13px}.proof p{padding:17px 0}.proof strong{font-size:17px}.proof span{font-size:12px}.section{padding:52px 0}.section-title{font-size:34px;line-height:1.08;margin-bottom:12px}.section-intro{font-size:15.5px;line-height:1.6;margin-bottom:26px}.cards,.benefit-grid{gap:12px}.service-card,.benefit-grid article{padding:21px 19px;border-radius:14px}.service-card h3{font-size:24px;margin:17px 0 8px}.service-card>p{font-size:13.5px}.service-card ul{margin-top:16px;padding-left:17px}.service-card li{font-size:12.8px;margin:6px 0}.benefit-grid{grid-template-columns:1fr}.benefit-grid h3{font-size:23px;margin-top:9px}.benefit-grid p{font-size:13.5px}.about-grid{gap:26px}.dark h2{font-size:36px;margin-bottom:10px}.about-lead{font-size:17px}.about-copy p,.about-copy p:first-child{font-size:14.5px}.qual{margin-top:22px}.profile-facts{margin-top:20px;gap:10px}.region{padding:48px 0}.region-card{padding:23px 20px;gap:20px}.region-card h2{font-size:31px}.region-card p{font-size:14px}.region-badge{width:72px;height:72px;font-size:21px}.faq summary{font-size:15px;line-height:1.4;padding-right:8px}.faq details p{font-size:14px}.contact{padding-top:22px;padding-bottom:74px}.contact-box{padding:24px 20px;gap:24px}.contact-box h2{font-size:31px}.contact-box p{font-size:14px}.contact-hints{gap:6px}.large{white-space:normal}.footer-grid{flex-direction:column;gap:18px}.footer-links{gap:16px}footer{padding:40px 0 86px}.mobile-contact{display:flex;position:fixed;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;min-height:52px;align-items:center;justify-content:center;gap:12px;background:var(--navy);color:#fff;text-decoration:none;font-weight:850;border-radius:14px;box-shadow:0 10px 30px rgba(13,43,59,.25)}.mobile-contact span{font-size:20px;line-height:1}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+
+
+/* V5 – dezente Gründerzeit-Architektur im Hero */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.hero-architecture {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(247,244,238,.98) 0%, rgba(247,244,238,.94) 38%, rgba(247,244,238,.66) 63%, rgba(247,244,238,.30) 100%),
+    url("altbau-rostock-hero.png") center right / cover no-repeat;
+  opacity: .92;
+}
+.hero-architecture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(9,36,55,.07));
+  pointer-events: none;
+}
+.hero > *:not(.hero-architecture) {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 760px) {
+  .hero-architecture {
+    background:
+      linear-gradient(180deg, rgba(247,244,238,.80) 0%, rgba(247,244,238,.94) 43%, rgba(247,244,238,.99) 78%),
+      linear-gradient(90deg, rgba(247,244,238,.70) 0%, rgba(247,244,238,.40) 100%),
+      url("altbau-rostock-hero.png") 67% top / auto 58% no-repeat;
+    opacity: .88;
+  }
+}
+@media (max-width: 430px) {
+  .hero-architecture {
+    background:
+      linear-gradient(180deg, rgba(247,244,238,.70) 0%, rgba(247,244,238,.94) 32%, rgba(247,244,238,1) 65%),
+      url("altbau-rostock-hero.png") 70% top / auto 48% no-repeat;
+  }
+}
