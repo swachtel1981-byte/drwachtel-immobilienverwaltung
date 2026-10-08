@@ -125,3 +125,29 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
       url("altbau-rostock-hero.png") 70% top/auto 40% no-repeat;
   }
 }
+
+
+/* Porträtfoto – dezent im Über-mich-Bereich integriert */
+.about-portrait{
+  margin:26px 0 0;
+  max-width:260px;
+}
+.about-portrait img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+@media (max-width:900px){
+  .about-portrait{
+    max-width:240px;
+  }
+}
+@media (max-width:600px){
+  .about-portrait{
+    max-width:210px;
+    margin-top:22px;
+  }
+}
