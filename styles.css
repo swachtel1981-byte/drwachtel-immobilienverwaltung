@@ -199,3 +199,22 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
   .change-cta{margin-top:20px}
 }
 @media(prefers-reduced-motion:reduce){.mobile-contact{transition:none}}
+
+
+/* Regionale Eigentümererfahrung: bewusst ruhig und kompakt statt Portfolio-Werbung */
+.references{background:#fbfaf7}
+.references .section-title{max-width:850px}
+.references .section-intro{max-width:840px;margin-bottom:30px}
+.reference-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.reference-card{overflow:hidden;min-width:0;background:#fff;border:1px solid #e5e4df;border-radius:18px;box-shadow:0 8px 24px rgba(15,52,71,.045)}
+.reference-image{margin:0;height:265px;overflow:hidden;background:#e9edef}
+.reference-image img{display:block;width:100%;height:100%;object-fit:cover}
+.reference-card:first-child .reference-image img{object-position:center 33%}
+.reference-card:nth-child(2) .reference-image img{object-position:center 53%}
+.reference-body{padding:21px 24px 22px}
+.reference-kicker{color:#8a7449;font-size:11px;font-weight:800;letter-spacing:.125em;text-transform:uppercase;margin:0 0 6px}
+.reference-card h3{font-family:Georgia,serif;font-size:27px;line-height:1.18;color:var(--navy);margin:0 0 10px}
+.reference-body>p:last-child{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
+.reference-note{margin:17px 0 0;font-size:12px;line-height:1.6;color:var(--muted);max-width:850px}
+@media(max-width:900px){.reference-grid{grid-template-columns:1fr}.reference-image{height:250px}}
+@media(max-width:600px){.reference-image{height:220px}.reference-body{padding:19px 20px 21px}.reference-card h3{font-size:25px}.references .section-intro{margin-bottom:24px}}
