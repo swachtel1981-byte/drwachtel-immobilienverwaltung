@@ -21,7 +21,7 @@ nav{display:flex;align-items:center;gap:26px;font-size:14px}
 nav a:hover{color:var(--sand)}
 .nav-cta{border:1px solid var(--navy);padding:9px 15px;border-radius:999px}
 .hero{position:relative;isolation:isolate;overflow:hidden;min-height:690px;display:flex;align-items:center}
-.hero-architecture{position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(247,244,238,.99) 0%,rgba(247,244,238,.96) 39%,rgba(247,244,238,.68) 62%,rgba(247,244,238,.20) 100%),url("altbau-rostock-hero.png") center right/cover no-repeat}
+.hero-architecture{position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,rgba(247,244,238,.99) 0%,rgba(247,244,238,.96) 39%,rgba(247,244,238,.68) 62%,rgba(247,244,238,.20) 100%),url("altbau-rostock-hero.webp") center right/cover no-repeat}
 .hero-architecture:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(15,52,71,.08))}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(320px,.64fr);gap:64px;align-items:center;padding:78px 0 72px}
 .eyebrow{margin:0 0 14px;text-transform:uppercase;letter-spacing:.16em;font-weight:700;font-size:12px;color:#55707e}
@@ -63,7 +63,7 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
   nav a:not(.nav-cta){display:none}
   .hero{min-height:auto}
   .hero-grid{grid-template-columns:1fr;gap:24px;padding:54px 0 42px}
-  .hero-architecture{background:linear-gradient(180deg,rgba(247,244,238,.72) 0%,rgba(247,244,238,.94) 39%,rgba(247,244,238,1) 70%),url("altbau-rostock-hero.png") 67% top/auto 52% no-repeat}
+  .hero-architecture{background:linear-gradient(180deg,rgba(247,244,238,.72) 0%,rgba(247,244,238,.94) 39%,rgba(247,244,238,1) 70%),url("altbau-rostock-hero.webp") 67% top/auto 52% no-repeat}
   h1{font-size:clamp(46px,12vw,68px);max-width:620px}
   .lead{font-size:18px;max-width:650px}
   .hero-card{max-width:650px}
@@ -77,7 +77,7 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
   .prelaunch{font-size:10px;padding:6px 10px}
   .nav{height:68px}.brand strong{font-size:19px}.brand-mark{width:38px;height:38px}.nav-cta{padding:8px 12px}
   .hero-grid{padding:42px 0 30px}
-  .hero-architecture{background:linear-gradient(180deg,rgba(247,244,238,.63) 0%,rgba(247,244,238,.92) 28%,rgba(247,244,238,1) 57%),url("altbau-rostock-hero.png") 70% top/auto 39% no-repeat}
+  .hero-architecture{background:linear-gradient(180deg,rgba(247,244,238,.63) 0%,rgba(247,244,238,.92) 28%,rgba(247,244,238,1) 57%),url("altbau-rostock-hero.webp") 70% top/auto 39% no-repeat}
   h1{font-size:46px;line-height:1.02;margin-bottom:18px}
   .lead{font-size:16px;line-height:1.58}
   .hero-actions{display:grid;grid-template-columns:1fr;margin-bottom:28px}.button{width:100%}
@@ -99,7 +99,7 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
 .hero-architecture{
   background:
     linear-gradient(90deg,rgba(247,244,238,.995) 0%,rgba(247,244,238,.965) 38%,rgba(247,244,238,.70) 60%,rgba(247,244,238,.18) 100%),
-    url("altbau-rostock-hero.png") center right/cover no-repeat;
+    url("altbau-rostock-hero.webp") center right/cover no-repeat;
 }
 .hero-copy{filter:drop-shadow(0 1px 0 rgba(255,255,255,.45))}
 .service-card,.benefit-grid article,.faq details{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
@@ -115,39 +115,87 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
     background:
       linear-gradient(180deg,rgba(247,244,238,.68) 0%,rgba(247,244,238,.93) 38%,rgba(247,244,238,1) 70%),
       linear-gradient(90deg,rgba(247,244,238,.62),rgba(247,244,238,.18)),
-      url("altbau-rostock-hero.png") 68% top/auto 53% no-repeat;
+      url("altbau-rostock-hero.webp") 68% top/auto 53% no-repeat;
   }
 }
 @media (max-width:600px){
   .hero-architecture{
     background:
       linear-gradient(180deg,rgba(247,244,238,.62) 0%,rgba(247,244,238,.92) 27%,rgba(247,244,238,1) 57%),
-      url("altbau-rostock-hero.png") 70% top/auto 40% no-repeat;
+      url("altbau-rostock-hero.webp") 70% top/auto 40% no-repeat;
   }
 }
+.about-portrait{margin:26px 0 0;max-width:260px}
+.about-portrait img{display:block;width:100%;height:auto;border-radius:22px;border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 40px rgba(0,0,0,.18)}
+@media(max-width:900px){.about-portrait{max-width:240px}}
+@media(max-width:600px){.about-portrait{max-width:210px;margin-top:22px}}
 
 
-/* Porträtfoto – dezent im Über-mich-Bereich integriert */
-.about-portrait{
-  margin:26px 0 0;
-  max-width:260px;
+/* === Gezielter Feinschliff: 26.10.2026 === */
+:focus-visible{outline:3px solid #a98a4f;outline-offset:4px}
+.skip-link{position:absolute;z-index:150;left:12px;top:-100px;padding:11px 16px;border-radius:10px;background:#fff;color:var(--navy);font-weight:700}
+.skip-link:focus{top:10px}
+#leistungen,#wechsel,#profil,#kontakt,#impressum,#datenschutz{scroll-margin-top:108px}
+
+/* Hero: etwas kompakter, weniger dominant wirkende Vorteilskarte. */
+.hero{min-height:650px}
+.hero-grid{gap:48px;padding-top:62px;padding-bottom:58px}
+.hero-card{padding:30px 30px 27px;border:1px solid rgba(255,255,255,.85);background:rgba(255,255,255,.91)}
+.hero-card h2{font-size:28px;line-height:1.19;margin-bottom:15px}
+.checklist{margin:12px 0 10px}
+.checklist li{padding-top:9px;padding-bottom:9px;line-height:1.55}
+.hero-card .small{margin-top:15px}
+
+/* Schwerpunkt WEG eindeutig sichtbar, ohne aufdringliche Akzente. */
+.section{padding-top:82px;padding-bottom:82px}
+.service-card-featured{border-color:#c8b48a;background:#fffdf8;box-shadow:0 12px 32px rgba(56,45,19,.07)}
+.service-card-featured::before{content:'';position:absolute;top:0;left:22px;right:22px;height:3px;background:var(--sand);border-radius:0 0 3px 3px}
+.service-focus{display:inline-block;margin-left:14px;color:#927644;font-size:11px;font-weight:750;letter-spacing:.03em}
+.service-card h3{line-height:1.16;overflow-wrap:anywhere}
+.service-card li{line-height:1.48}
+.change-cta{margin:26px 0 0;text-align:right}
+.change-cta a{display:inline-block;color:var(--navy);font-size:14px;font-weight:750;border-bottom:1px solid var(--sand);padding-bottom:3px}
+.change-cta a:hover{color:#826839}
+
+/* Porträt als ruhiger Vertrauensanker statt großer Bildfläche. */
+.about-grid{gap:68px;align-items:center}
+.about-portrait{max-width:205px;margin-top:23px}
+.about-portrait img{display:block;width:100%;aspect-ratio:4/4.7;object-fit:cover;object-position:center 22%;border-radius:16px}
+.about-copy>p{line-height:1.7}
+.profile-facts div{padding:17px 14px}
+
+/* Klare Telefonoption unter dem primären E-Mail-Knopf. */
+.contact-box{gap:52px}
+.contact-action{min-width:270px}
+.contact-direct-label{font-size:13px;color:var(--muted);margin:19px 0 2px!important}
+.contact-phone{display:block;font-size:25px;line-height:1.2;font-weight:750;color:var(--navy);margin-bottom:7px;letter-spacing:.005em}
+.contact-phone:hover{text-decoration:underline;text-decoration-color:var(--sand)}
+.contact-email{display:block;font-size:13px;overflow-wrap:anywhere;text-decoration:underline;text-decoration-color:#c4b698;text-underline-offset:3px}
+.contact-action small{margin-top:15px;font-size:11px;line-height:1.45}
+.faq summary{min-height:30px}
+
+@media(max-width:900px){
+  .hero{min-height:0}
+  .hero-grid{gap:24px;padding:50px 0 38px}
+  .about-grid{gap:32px}
+  .change-cta{text-align:left}
+  .contact-action{min-width:0}
 }
-.about-portrait img{
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius:22px;
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:0 20px 40px rgba(0,0,0,.18);
+@media(max-width:600px){
+  h1{font-size:clamp(37px,10.5vw,43px);line-height:1.07}
+  .hero-grid{padding:38px 0 30px}
+  .hero-card{padding:23px 21px}
+  .hero-card h2{font-size:25px}
+  .checklist li{font-size:13.5px;padding-top:8px;padding-bottom:8px}
+  .section{padding-top:60px;padding-bottom:60px}
+  .about-portrait{max-width:170px;margin-top:20px}
+  .about-portrait img{aspect-ratio:4/4.7}
+  .contact-action{width:100%}
+  .contact-box{gap:23px}
+  .contact-phone{font-size:25px}
+  .contact-direct-label{margin-top:22px!important}
+  .mobile-contact{transition:opacity .18s ease,transform .18s ease,visibility .18s ease}
+  .mobile-contact.is-hidden{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px)}
+  .change-cta{margin-top:20px}
 }
-@media (max-width:900px){
-  .about-portrait{
-    max-width:240px;
-  }
-}
-@media (max-width:600px){
-  .about-portrait{
-    max-width:210px;
-    margin-top:22px;
-  }
-}
+@media(prefers-reduced-motion:reduce){.mobile-contact{transition:none}}
