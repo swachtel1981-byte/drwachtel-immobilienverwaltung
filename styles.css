@@ -218,3 +218,70 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
 .reference-note{margin:17px 0 0;font-size:12px;line-height:1.6;color:var(--muted);max-width:850px}
 @media(max-width:900px){.reference-grid{grid-template-columns:1fr}.reference-image{height:250px}}
 @media(max-width:600px){.reference-image{height:220px}.reference-body{padding:19px 20px 21px}.reference-card h3{font-size:25px}.references .section-intro{margin-bottom:24px}}
+
+
+/* === Responsive-Korrektur iPhone / Smartphone / Tablet · 27.10.2026 ===
+   Verhindert ueberbreite Flex-/Grid-Inhalte und seitlich verschobene Seiten auf iOS. */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+@supports(overflow:clip){html,body{overflow-x:clip}}
+.site-header,.prelaunch,main,footer{width:100%;max-width:100%}
+.nav,.hero-grid,.cards,.steps,.about-grid,.reference-grid,.faq-grid,.contact-box,.footer-grid{max-width:100%}
+.nav>*,.hero-grid>*,.cards>*,.steps>*,.about-grid>*,.reference-grid>*,.faq-grid>*,.contact-box>*,.footer-grid>*{min-width:0}
+.nav .brand{min-width:0}
+.nav .brand>span:last-child{min-width:0}
+.service-card,.steps article,.reference-card,.faq details,.contact-action{min-width:0}
+.service-card h3,.steps h3,.section-title,.dark h2,.contact-box h2{
+  overflow-wrap:break-word;
+  word-break:normal;
+  hyphens:auto;
+}
+.contact-email,.legal-note{overflow-wrap:anywhere}
+
+/* Tablet und kleine Laptops: Der Hero bekommt Platz fuer seine langen Texte. */
+@media (min-width:901px) and (max-width:1099px){
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,.83fr);gap:28px}
+  .hero-card{padding:24px}
+  .hero-card h2{font-size:25px}
+  .trust{gap:10px}
+}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .about-grid,.contact-box{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .wrap{width:calc(100% - 32px);max-width:var(--wrap);margin-inline:auto}
+  .nav{gap:10px}
+  .brand{flex:1 1 auto;min-width:0;gap:8px}
+  .brand-mark{flex:0 0 36px;width:36px;height:36px}
+  .brand strong{font-size:clamp(16px,4.6vw,19px);white-space:nowrap}
+  .brand small{font-size:clamp(7px,1.95vw,9px);letter-spacing:.10em;white-space:nowrap}
+  nav{flex:0 0 auto;gap:0}
+  nav .nav-cta{font-size:13px;padding:7px 10px}
+  .hero-grid,.cards,.steps,.reference-grid,.faq-grid{grid-template-columns:minmax(0,1fr)}
+  .service-card h3{font-size:clamp(22px,6vw,25px);line-height:1.22}
+  .dark h2{font-size:clamp(32px,9vw,39px)}
+  .section-title{font-size:clamp(31px,9vw,36px)}
+  .contact-box h2{font-size:clamp(29px,8.6vw,34px)}
+  .trust{grid-template-columns:minmax(0,1fr)}
+  .trust div{min-width:0;flex-wrap:wrap;gap:4px 10px}
+  .trust span{overflow-wrap:break-word}
+  .mobile-contact{
+    left:max(12px,env(safe-area-inset-left));
+    right:max(12px,env(safe-area-inset-right));
+    bottom:max(12px,env(safe-area-inset-bottom));
+    width:auto;
+    max-width:calc(100vw - 24px);
+  }
+}
+@media(max-width:360px){
+  .nav{gap:6px}
+  .brand{gap:6px}
+  .brand-mark{flex-basis:32px;width:32px;height:32px;font-size:14px}
+  .brand strong{font-size:16px}
+  .brand small{font-size:7px;letter-spacing:.08em}
+  nav .nav-cta{padding:6px 8px;font-size:12px}
+  .trust div{display:block}
+  .trust span{text-align:left;margin-top:2px}
+  .service-card{padding:21px}
+  .hero-card{padding:21px 19px}
+}
