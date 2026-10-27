@@ -60,7 +60,7 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
 
 @media (max-width:900px){
   .wrap{width:min(calc(100% - 32px),var(--wrap))}
-  nav a:not(.nav-cta){display:none}
+  .site-header nav a:not(.nav-cta){display:none}
   .hero{min-height:auto}
   .hero-grid{grid-template-columns:1fr;gap:24px;padding:54px 0 42px}
   .hero-architecture{background:linear-gradient(180deg,rgba(247,244,238,.72) 0%,rgba(247,244,238,.94) 39%,rgba(247,244,238,1) 70%),url("altbau-rostock-hero.webp") 67% top/auto 52% no-repeat}
@@ -254,8 +254,8 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .brand-mark{flex:0 0 36px;width:36px;height:36px}
   .brand strong{font-size:clamp(16px,4.6vw,19px);white-space:nowrap}
   .brand small{font-size:clamp(7px,1.95vw,9px);letter-spacing:.10em;white-space:nowrap}
-  nav{flex:0 0 auto;gap:0}
-  nav .nav-cta{font-size:13px;padding:7px 10px}
+  .site-header nav{flex:0 0 auto;gap:0}
+  .site-header nav .nav-cta{font-size:13px;padding:7px 10px}
   .hero-grid,.cards,.steps,.reference-grid,.faq-grid{grid-template-columns:minmax(0,1fr)}
   .service-card h3{font-size:clamp(22px,6vw,25px);line-height:1.22}
   .dark h2{font-size:clamp(32px,9vw,39px)}
@@ -278,7 +278,7 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .brand-mark{flex-basis:32px;width:32px;height:32px;font-size:14px}
   .brand strong{font-size:16px}
   .brand small{font-size:7px;letter-spacing:.08em}
-  nav .nav-cta{padding:6px 8px;font-size:12px}
+  .site-header nav .nav-cta{padding:6px 8px;font-size:12px}
   .trust div{display:block}
   .trust span{text-align:left;margin-top:2px}
   .service-card{padding:21px}
@@ -388,4 +388,23 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .legal-section p{font-size:14px;line-height:1.67}
   .legal-links{margin-top:10px}
   .legal-card .legal-lead{font-size:15px}
+}
+
+
+/* Footer 27.10.2026: Rechtliche Links muessen auch auf iPhone/Tablet sichtbar bleiben.
+   Die Ausblendung betrifft ausschliesslich Menuepunkte im Hauptheader. */
+.footer-grid .legal-links a{display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:900px){
+  .footer-grid .legal-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:2px 22px;
+  }
+}
+@media (max-width:600px){
+  .footer-grid .legal-links{
+    margin-top:18px;
+    padding-top:12px;
+    border-top:1px solid rgba(255,255,255,.18);
+  }
 }
