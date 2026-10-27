@@ -359,3 +359,33 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
  .contact-channel-divider{margin:22px 0}
 }
 @media(prefers-reduced-motion:reduce){.copy-email-button{transition:none}}
+
+
+/* Rechtstexte – eigenständige, gut lesbare und direkt verlinkbare Seiten */
+.prelaunch{display:flex;justify-content:center;align-items:center;gap:12px 24px;flex-wrap:wrap;padding-inline:18px}
+.prelaunch-links{display:inline-flex;align-items:center;gap:14px;white-space:nowrap}
+.prelaunch-links a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.4);text-underline-offset:3px;font-weight:700;color:#fff}
+.prelaunch-links a:hover{text-decoration-color:#fff}
+.footer-grid{align-items:flex-start}
+.legal-links{display:flex;flex-wrap:wrap;gap:14px 23px;font-size:14px}
+.legal-links a{color:#e7eef1;text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:4px}
+.legal-links a:hover{text-decoration-color:#fff}
+.legal-main{padding:64px 0 20px;background:linear-gradient(180deg,var(--cream),#fff 360px)}
+.legal-card{max-width:900px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:clamp(24px,5vw,58px);box-shadow:0 12px 36px rgba(15,52,71,.055);overflow-wrap:anywhere}
+.legal-card h1{font-family:Georgia,serif;color:var(--navy);font-size:clamp(38px,5.2vw,60px);line-height:1.14;margin:0 0 17px}
+.legal-card .legal-lead{font-size:17px;color:var(--muted);margin-bottom:28px}
+.legal-section{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
+.legal-section h2{font-family:Georgia,serif;font-size:clamp(22px,2.8vw,29px);line-height:1.23;color:var(--navy);margin:0 0 13px}
+.legal-section p{font-size:15px;line-height:1.72;color:var(--ink);margin-bottom:14px}
+.legal-section a,.legal-return a{color:#176084;text-decoration:underline;text-underline-offset:3px}
+.legal-section a:hover,.legal-return a:hover{color:var(--navy)}
+.legal-return{margin:36px 0 0;font-weight:700;font-size:14px}
+@media(max-width:600px){
+  .prelaunch{gap:3px 12px;padding:7px 10px;font-size:10px;line-height:1.5}
+  .prelaunch-links{gap:16px}
+  .legal-main{padding:28px 0 0}
+  .legal-card{padding:24px 20px;border-radius:16px}
+  .legal-section p{font-size:14px;line-height:1.67}
+  .legal-links{margin-top:10px}
+  .legal-card .legal-lead{font-size:15px}
+}
