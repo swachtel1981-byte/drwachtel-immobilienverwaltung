@@ -215,7 +215,6 @@ footer{margin-top:90px;background:#0a2533;color:#c9d5da;padding:42px 0 110px}.fo
 .reference-kicker{color:#8a7449;font-size:11px;font-weight:800;letter-spacing:.125em;text-transform:uppercase;margin:0 0 6px}
 .reference-card h3{font-family:Georgia,serif;font-size:27px;line-height:1.18;color:var(--navy);margin:0 0 10px}
 .reference-body>p:last-child{font-size:14px;line-height:1.6;color:var(--muted);margin:0}
-.reference-note{margin:17px 0 0;font-size:12px;line-height:1.6;color:var(--muted);max-width:850px}
 @media(max-width:900px){.reference-grid{grid-template-columns:1fr}.reference-image{height:250px}}
 @media(max-width:600px){.reference-image{height:220px}.reference-body{padding:19px 20px 21px}.reference-card h3{font-size:25px}.references .section-intro{margin-bottom:24px}}
 
@@ -285,3 +284,78 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
   .service-card{padding:21px}
   .hero-card{padding:21px 19px}
 }
+
+
+/* Kontakt ohne Mailprogramm-Pflicht: sichtbare Adresse, Kopieren und direkte Mobilnummer. */
+.contact-box{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(24px,4vw,52px);align-items:center}
+.contact-copy{min-width:0}
+.contact-action{
+  min-width:0;
+  padding:26px;
+  text-align:left;
+  background:#fff;
+  border:1px solid #e5dfd3;
+  border-radius:18px;
+  box-shadow:0 10px 26px rgba(15,52,71,.045);
+}
+.contact-channel-label{
+  margin:0 0 11px!important;
+  color:var(--navy)!important;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.015em;
+}
+.contact-email-box{display:flex;align-items:center;flex-wrap:wrap;gap:12px;min-width:0}
+.contact-email-address{
+  display:block;
+  flex:1 1 235px;
+  min-width:0;
+  font-size:clamp(15px,1.4vw,18px);
+  line-height:1.35;
+  font-weight:750;
+  letter-spacing:-.015em;
+  color:var(--navy);
+  overflow-wrap:anywhere;
+  user-select:text;
+  -webkit-user-select:text;
+}
+.copy-email-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  min-height:43px;
+  padding:9px 15px;
+  border:1px solid var(--navy);
+  border-radius:11px;
+  color:var(--navy);
+  background:#f8f9f8;
+  font-family:inherit;
+  line-height:1.25;
+  font-size:13px;
+  font-weight:750;
+  cursor:pointer;
+  transition:background .15s ease, color .15s ease, border-color .15s ease;
+}
+.copy-email-button:hover{background:var(--navy);color:#fff}
+.copy-email-button:focus-visible{outline:3px solid #a98a4f;outline-offset:3px}
+.copy-email-feedback{min-height:0;margin:7px 0 0!important;color:#3c6657!important;font-size:12px!important;line-height:1.4}
+.copy-email-feedback:empty{display:none}
+.contact-email-help{margin:11px 0 10px!important;font-size:12px;line-height:1.5;color:var(--muted)!important}
+.contact-channel-divider{height:1px;background:#e8e6e0;margin:21px 0 20px}
+.contact-phone{display:inline-block;margin:0;color:var(--navy);font-size:clamp(25px,2.25vw,32px);font-weight:800;line-height:1.1}
+.contact-phone-hint{font-size:12px;color:var(--muted);margin:7px 0 0!important}
+.contact-action small{font-size:11px;line-height:1.5;color:var(--muted);margin-top:24px}
+@media(max-width:900px){
+ .contact-box{grid-template-columns:minmax(0,1fr)}
+ .contact-action{width:100%;min-width:0;max-width:620px}
+}
+@media(max-width:600px){
+ .contact-action{padding:21px;border-radius:15px}
+ .contact-email-box{gap:10px}
+ .contact-email-address{flex-basis:100%;font-size:17px}
+ .copy-email-button{min-height:44px}
+ .contact-box{gap:23px}
+ .contact-channel-divider{margin:22px 0}
+}
+@media(prefers-reduced-motion:reduce){.copy-email-button{transition:none}}

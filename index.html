@@ -137,7 +137,7 @@
         </div>
       </article>
     </div>
-    <p class="reference-note">Die beiden Gebäude zeigen Eigentumswohnungen aus meinem eigenen Bestand – keine Referenzen für bereits übernommene Verwaltungsmandate Dritter.</p>
+    
   </div>
 </section>
 <section class="section faq">
@@ -153,19 +153,28 @@
 </div>
 </section>
 <section class="section contact" id="kontakt">
-<div class="wrap contact-box">
-<div>
-<p class="eyebrow">Unverbindlicher Erstkontakt</p>
-<h2>Sie suchen eine Verwaltung, die zu Ihrer Immobilie passt?</h2>
-<p>Für ein erstes Kennenlernen reichen wenige Angaben zu Ihrer Immobilie. So lässt sich schnell einschätzen, ob Bedarf, Objekt und Verwaltungsansatz gut zusammenpassen.</p>
-<div class="contact-hints"><span>Objekt / WEG</span><span>Ort</span><span>Anzahl Einheiten</span><span>Wechseltermin</span></div>
-</div>
-<div class="contact-action">
-<a class="button primary large" href="mailto:dr.stephan.wachtel@gmail.com?subject=Anfrage%20Immobilienverwaltung&amp;body=Guten%20Tag%20Herr%20Dr.%20Wachtel%2C%0A%0AObjektart%20%2F%20WEG%3A%20%0AOrt%20%2F%20Stadtteil%3A%20%0AAnzahl%20Einheiten%3A%20%0AGew%C3%BCnschter%20Wechseltermin%3A%20%0ATelefon%20f%C3%BCr%20R%C3%BCckruf%3A%20%0A%0AKurze%20Nachricht%20%2F%20aktuelle%20Themen%3A%0A">Objekt unverbindlich vorstellen</a><p class="contact-direct-label">Lieber persönlich sprechen?</p><a aria-label="Mobilnummer 0151 56822067 anrufen" class="contact-phone" href="tel:+4915156822067">0151 56822067</a><a class="contact-email" href="mailto:dr.stephan.wachtel@gmail.com">dr.stephan.wachtel@gmail.com</a>
-
-<small>Vorgespräche für künftige Wechseltermine nach Vereinbarung.</small>
-</div>
-</div>
+  <div class="wrap contact-box">
+    <div class="contact-copy">
+      <p class="eyebrow">Unverbindlicher Erstkontakt</p>
+      <h2>Sie suchen eine Verwaltung, die zu Ihrer Immobilie passt?</h2>
+      <p>Ob Verwaltungsbeirat oder Eigentümer: Für ein erstes Gespräch reichen Standort, Objektart, Anzahl der Einheiten und der gewünschte Wechseltermin. Schreiben Sie mir oder rufen Sie mich direkt an.</p>
+      <div class="contact-hints" aria-label="Hilfreiche Angaben bei Ihrer Anfrage"><span>Objekt / WEG</span><span>Ort</span><span>Anzahl Einheiten</span><span>Wechseltermin</span></div>
+    </div>
+    <div class="contact-action" aria-label="Kontaktmöglichkeiten">
+      <p class="contact-channel-label">Per E-Mail anfragen</p>
+      <div class="contact-email-box">
+        <span class="contact-email-address" id="contact-email-address">dr.stephan.wachtel@gmail.com</span>
+        <button type="button" class="copy-email-button" id="copy-email-button" aria-label="E-Mail-Adresse kopieren">E-Mail kopieren</button>
+      </div>
+      <p class="copy-email-feedback" id="copy-email-feedback" role="status" aria-live="polite"></p>
+      <p class="contact-email-help">Sie können die Adresse kopieren und in Ihrer E-Mail-Anwendung verwenden – auch ohne ein mit dem Browser verknüpftes Mailprogramm.</p>
+      <div class="contact-channel-divider" aria-hidden="true"></div>
+      <p class="contact-channel-label">Oder lieber persönlich sprechen?</p>
+      <a aria-label="Mobilnummer 0151 56822067 anrufen" class="contact-phone" href="tel:+4915156822067">0151 56822067</a>
+      <p class="contact-phone-hint">Direkter Kontakt zum Inhaber</p>
+      <small>Vorgespräche für künftige Wechseltermine nach Vereinbarung.</small>
+    </div>
+  </div>
 </section>
 </main>
 <a aria-label="Zum unverbindlichen Erstkontakt" class="mobile-contact" href="#kontakt">Objekt vorstellen <span>→</span></a>
@@ -208,5 +217,47 @@
   observer.observe(contact);
   observer.observe(footer);
 })();
-</script></body>
+</script><script>
+// Nur lokale Bedienhilfe: Die E-Mail-Adresse wird ausschließlich in die
+// Zwischenablage kopiert. Es werden keine Formulardaten übertragen.
+(() => {
+  const button = document.getElementById('copy-email-button');
+  const email = document.getElementById('contact-email-address');
+  const feedback = document.getElementById('copy-email-feedback');
+  if (!button || !email || !feedback) return;
+
+  const copyFallback = value => {
+    const field = document.createElement('textarea');
+    field.value = value;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    field.style.left = '-9999px';
+    document.body.appendChild(field);
+    field.focus();
+    field.select();
+    let done = false;
+    try { done = document.execCommand('copy'); } catch (_) { done = false; }
+    field.remove();
+    return done;
+  };
+
+  button.addEventListener('click', async () => {
+    const value = email.textContent.trim();
+    let done = false;
+    if (navigator.clipboard && window.isSecureContext) {
+      try { await navigator.clipboard.writeText(value); done = true; } catch (_) { /* Fallback */ }
+    }
+    if (!done) done = copyFallback(value);
+    feedback.textContent = done
+      ? 'E-Mail-Adresse kopiert – jetzt in Ihre E-Mail-Anwendung einfügen.'
+      : 'Bitte die angezeigte E-Mail-Adresse markieren und kopieren.';
+    if (done) {
+      button.textContent = 'Kopiert ✓';
+      button.setAttribute('aria-label', 'E-Mail-Adresse wurde kopiert');
+    }
+  });
+})();
+</script>
+</body>
 </html>
