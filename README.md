@@ -3,8 +3,8 @@
 Statischer Vorabentwurf für eine spätere GitHub-Pages-Seite.
 
 ## Status
-- Noch nicht veröffentlicht
-- `index.html` enthält `noindex,nofollow`
+- Veröffentlicht unter https://www.drwachtel.de (seit 29.10.2026)
+- Startseite für Suchmaschinen freigegeben (`index,follow`, robots.txt, sitemap.xml); Impressum und Datenschutz bleiben `noindex,follow`
 - GitHub Pages erst aktivieren, wenn Impressum, Datenschutz und gewerbliche Voraussetzungen final geklärt sind.
 
 ## Dateien
