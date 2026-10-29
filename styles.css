@@ -408,3 +408,59 @@ html,body{width:100%;max-width:100%;overflow-x:hidden}
     border-top:1px solid rgba(255,255,255,.18);
   }
 }
+
+
+/* Kleine, nachgeordnete Übersicht: zusätzliche immobilienwirtschaftliche Perspektiven */
+.extensions {
+  padding-block: 72px 76px;
+  background: linear-gradient(180deg, #fbfaf8 0%, #f7f4ee 100%);
+  border-top: 1px solid #eee9df;
+  border-bottom: 1px solid #eee9df;
+}
+.extensions-heading .section-title { max-width: 790px; }
+.extensions-heading .section-intro { margin-bottom: 26px; max-width: 780px; }
+.extensions-grid { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:18px; }
+.extension-card {
+  min-width:0;
+  padding:28px 30px 30px;
+  border:1px solid #e5e0d5;
+  border-top:3px solid #baa06c;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 8px 26px rgba(15,52,71,.035);
+}
+.extension-index { display:block; color:#90794f; letter-spacing:.12em; font-size:11px; font-weight:800; }
+.extension-card h3 { margin:13px 0 10px; color:var(--navy); font:normal 25px/1.18 Georgia,'Times New Roman',serif; }
+.extension-card p { color:var(--muted); font-size:15px; line-height:1.65; margin:0; }
+.extensions-status { border-left:2px solid #baa06c; padding-left:14px; color:var(--muted); font-size:12px; margin:23px 0 0; max-width:850px; }
+@media (max-width: 700px) {
+  .extensions { padding-block: 58px 62px; }
+  .extensions-grid { grid-template-columns:minmax(0,1fr); gap:12px; }
+  .extension-card { padding:24px 24px 26px; }
+  .extension-card h3 { font-size:23px; }
+}
+
+
+/* Kompakt-Fassung 29.10.2026: weniger Text, mehr Lesefluss, ohne neue Komponenten */
+@media (min-width:901px){
+  .section{padding-top:68px;padding-bottom:68px}
+  .extensions{padding-top:63px;padding-bottom:65px}
+  .service-card{padding:27px 27px 28px}
+  .steps article{padding:19px 18px}
+  .reference-image{height:240px}
+}
+@media (max-width:900px){
+  .section{padding-top:56px;padding-bottom:56px}
+  .extensions{padding-top:52px;padding-bottom:52px}
+  .service-card{padding:23px}
+  .reference-image{height:235px}
+}
+@media (max-width:600px){
+  .section{padding-top:48px;padding-bottom:48px}
+  .extensions{padding-top:47px;padding-bottom:47px}
+  .reference-image{height:205px}
+  .service-card ul{margin-top:16px}
+  .service-card li{margin:7px 0}
+  .steps article{padding:17px 18px}
+  .extension-card{padding:21px 22px 23px}
+}
